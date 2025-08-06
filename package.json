@@ -1,12 +1,12 @@
 {
   "name": "farmatup-api",
   "module": "index.ts",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "bun --watch src/index.ts",
     "build": "bunx tsc -p tsconfig.build.json",
-    "postinstall": "npx prisma generate && bunx prisma migrate deploy",
-    "start": "bunx prisma migrate deploy && node dist/index.js",
+    "postinstall": "npx prisma generate",
+    "start": "npx prisma migrate deploy && node dist/index.js",
     "dev:node": "ts-node src/index.ts",
     "build:node": "tsc -p tsconfig.build.json",
     "start:node": "npx prisma migrate deploy && node dist/index.js",
