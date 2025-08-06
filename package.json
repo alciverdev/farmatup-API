@@ -6,10 +6,10 @@
     "dev": "bun --watch src/index.ts",
     "build": "bunx tsc -p tsconfig.build.json",
     "postinstall": "bunx prisma generate && bunx prisma migrate deploy",
-    "start": "bun run build && node dist/index.js",
+    "start": "bunx prisma migrate deploy && node dist/index.js",
     "dev:node": "ts-node src/index.ts",
     "build:node": "tsc -p tsconfig.build.json",
-    "start:node": "node dist/index.js",
+    "start:node": "npx prisma migrate deploy && node dist/index.js",
     "postinstall:node": "npx prisma generate && npx prisma migrate deploy"
   },
   "devDependencies": {
