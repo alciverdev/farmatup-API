@@ -7,8 +7,8 @@ RUN apk add --no-cache openssl libc6-compat
 # Copiar archivos de configuración
 COPY package.json ./
 
-# Instalar dependencias
-RUN npm install
+# Instalar dependencias (sin ejecutar postinstall)
+RUN npm install --ignore-scripts
 
 # Copiar código fuente
 COPY . .
