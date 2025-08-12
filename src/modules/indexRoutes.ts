@@ -1,7 +1,9 @@
 import { Router } from "express";
-import UserRouter from "./register/routers/register.route";
+import authRoutes from "./auth.routes";
+ // ajusta la ruta según tu estructura
+
 const router = Router();
 
-router.use("/users", UserRouter);
+router.use("/api/auth", authRoutes);
 
 export default router;
